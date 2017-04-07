@@ -1,3 +1,0 @@
-/home/blevent/CLionProjects/IPK2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/blevent/CLionProjects/IPK2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/blevent/CLionProjects/IPK2/cmake-build-debug/CMakeFiles/ipk-client.dir
