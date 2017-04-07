@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/ipk-client.dir/ipk-client.cpp.o CMakeFiles/ipk-client.dir/Connection.cpp.o  -o ipk-client /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

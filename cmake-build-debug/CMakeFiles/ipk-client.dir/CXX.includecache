@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/blevent/CLionProjects/IPK2/Connection.cpp
+Connection.h
+/home/blevent/CLionProjects/IPK2/Connection.h
+iostream
+-
+sys/socket.h
+-
+netdb.h
+-
+unistd.h
+-
+cstring
+-
+
+/home/blevent/CLionProjects/IPK2/Connection.h
+string
+-
+
+/home/blevent/CLionProjects/IPK2/ipk-client.cpp
+iostream
+-
+openssl/md5.h
+-
+vector
+-
+regex
+-
+Connection.h
+/home/blevent/CLionProjects/IPK2/Connection.h
+
