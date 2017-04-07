@@ -5,19 +5,19 @@
 #include "Connection.h"
 
 using namespace std;
-
-/**
- * Url gets hostname and port.
- * [0] - hostname, [1] - port
- * @param url The url to parse.
- * @return Array of url parts.
- */
-vector<string> parse_url(string url) {
-    vector<string> values;
-    values.push_back(url.substr(0, url.find_last_of(":") ));
-    values.push_back(url.substr( url.find_last_of(":")+1 ));
-    return values;
-}
+//
+///**
+// * Url gets hostname and port.
+// * [0] - hostname, [1] - port
+// * @param url The url to parse.
+// * @return Array of url parts.
+// */
+//vector<string> parse_url(string url) {
+//    vector<string> values;
+//    values.push_back(url.substr(0, url.find_last_of(":") ));
+//    values.push_back(url.substr( url.find_last_of(":")+1 ));
+//    return values;
+//}
 
 /**
  * Create md5 hash from the given string.
@@ -114,17 +114,16 @@ string generateResponse(string response) {
 }
 
 int main(int argc, char *argv[]) {
-    //parlon.holes.sk:55555
     if ( argc != 2 ) {
         cerr << "Usage: ipk-client hostname" << endl;
         return 1;
     }
 
-    vector<string> url = parse_url(argv[1]);
-    Connection conn(url[1]);
+//    vector<string> url = parse_url(argv[1]);
+    Connection conn("55555");
 
-    if ( !conn.connect(url[0]) ) {
-        cerr << "Cannot connect to " << url[0] << ":" << url[1] << endl;
+    if ( !conn.connect(argv[1]) ) {
+        cerr << "Cannot connect to " << argv[1] << ":55555" << endl;
         return 2;
     }
 
