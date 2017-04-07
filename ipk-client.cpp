@@ -1,7 +1,7 @@
 #include <iostream>
-#include <openssl/md5.h>
 #include <vector>
 #include <regex>
+#include "md5.h"
 #include "Connection.h"
 
 using namespace std;
@@ -19,34 +19,34 @@ using namespace std;
 //    return values;
 //}
 
-/**
- * Create md5 hash from the given string.
- * @param str String to hash.
- * @param length String length.
- * @return Hashed string.
- */
-string str2md5(const char *str, size_t length) {
-    MD5_CTX c;
-    unsigned char digest[16];
-    char *out = (char*)malloc(33);
-
-    MD5_Init(&c);
-
-    while (length > 512) {
-        MD5_Update(&c, str, 512);
-        length -= 512;
-        str += 512;
-    }
-    MD5_Update(&c, str, length);
-    MD5_Final(digest, &c);
-
-    for (int n = 0; n < 16; ++n) {
-        snprintf(&(out[n*2]), 16*2, "%02x", (unsigned int)digest[n]);
-    }
-
-    string res = out;
-    return res;
-}
+///**
+// * Create md5 hash from the given string.
+// * @param str String to hash.
+// * @param length String length.
+// * @return Hashed string.
+// */
+//string str2md5(const char *str, size_t length) {
+//    MD5_CTX c;
+//    unsigned char digest[16];
+//    char *out = (char*)malloc(33);
+//
+//    MD5_Init(&c);
+//
+//    while (length > 512) {
+//        MD5_Update(&c, str, 512);
+//        length -= 512;
+//        str += 512;
+//    }
+//    MD5_Update(&c, str, length);
+//    MD5_Final(digest, &c);
+//
+//    for (int n = 0; n < 16; ++n) {
+//        snprintf(&(out[n*2]), 16*2, "%02x", (unsigned int)digest[n]);
+//    }
+//
+//    string res = out;
+//    return res;
+//}
 
 /**
  * Splits string to substrings by given delimiter
@@ -101,7 +101,7 @@ long long do_the_math(long long a, char op, long long b) {
  */
 string generateHello() {
     string login = "xberky02";
-    return "HELLO " + str2md5(login.c_str(), login.length()) + "\n";
+    return "HELLO " + md5(login) + "\n";
 }
 
 /**
