@@ -81,7 +81,7 @@ string Connection::getResponse()
     string msg;
     memset(buffer, 0, BUFFER_SIZE);
 
-    if ( recv(socket_desc, buffer, BUFFER_SIZE, 0) <= 0 ) {
+    if ( recv(socket_desc, buffer, BUFFER_SIZE, 0) < 0 ) {
         cerr << "Connection: Bad socket transfer when receiving message" << endl;
         return "";
     }
